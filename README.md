@@ -1,4 +1,4 @@
-#🩺 Medical Report AI
+# 🩺 Medical Report AI
 
 An AI-powered Medical Report Analyzer built using **Streamlit + LangChain + Groq + ChromaDB**.
 
@@ -61,12 +61,11 @@ AI Response
 # 📂 Project Structure
 
 ```bash
-Medical-Report-AI/
+MedRAG-AI/
 │
 ├── medical_repo.py
 ├── requirements.txt
 ├── README.md
-
 ```
 
 ---
