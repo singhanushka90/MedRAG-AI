@@ -226,7 +226,6 @@ Paste the API key inside the Streamlit sidebar.
 - ✅ Download AI Summary PDF
 - ✅ Medical Report Classification
 - ✅ Multi-LLM Support
-- ✅ Dark / Light Mode
 - ✅ AI Health Recommendations
 - ✅ Medical Charts Visualization
 - ✅ Report History Storage
