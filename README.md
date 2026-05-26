@@ -1,60 +1,133 @@
-# 🩺 Medical Report AI
+<div align="center">
 
-An AI-powered Medical Report Analyzer built using **Streamlit + LangChain + Groq + ChromaDB**.
+# 🩺 MedRAG-AI
 
-This application allows users to upload medical PDFs and ask questions from the report using **Hybrid RAG (Retrieval-Augmented Generation)**.
+### <span style="color:#4CAF50;">AI-Powered Medical Report Analysis using Hybrid RAG</span>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python"/>
+
+<img src="https://img.shields.io/badge/Streamlit-AI_App-red?style=for-the-badge&logo=streamlit"/>
+
+<img src="https://img.shields.io/badge/LangChain-RAG-green?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/ChromaDB-VectorDB-purple?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Groq-LLM-orange?style=for-the-badge"/>
+
+</p>
 
 ---
 
-# 🚀 Features
+### 🚀 Upload Medical PDFs • Ask Questions • Get AI Explanations
 
-✅ Upload Multiple PDFs  
-✅ AI-Powered Medical Report Explanation  
-✅ Hybrid Search (Dense + Sparse Retrieval)  
-✅ Chroma Vector Database  
-✅ Chat Memory  
-✅ Semantic Search  
-✅ Simple Medical Explanation  
-✅ Session-Based Conversations  
-✅ Streamlit Chat UI  
-✅ Fast Responses using Groq LLM
+</div>
 
 ---
 
-# 🧠 Tech Stack
+# 📌 Overview
 
-| Technology | Purpose |
+**MedRAG-AI** is an advanced AI-powered Medical Report Assistant built using:
+
+- 🧠 LangChain
+- ⚡ Groq LLM
+- 📚 ChromaDB
+- 🔍 Hybrid Retrieval
+- 🎨 Streamlit UI
+
+This application allows users to upload medical reports in PDF format and interact with them using natural language.
+
+The system uses **Hybrid RAG (Retrieval-Augmented Generation)** to provide intelligent and context-aware responses from uploaded reports.
+
+---
+
+# ✨ Features
+
+<div align="center">
+
+| Feature | Description |
 |---|---|
-| Streamlit | Frontend UI |
-| LangChain | RAG Pipeline |
-| Groq | LLM Inference |
-| ChromaDB | Vector Database |
-| HuggingFace Embeddings | Text Embeddings |
-| BM25 Retriever | Sparse Retrieval |
-| PyPDFLoader | PDF Parsing |
+| 📄 Multi PDF Upload | Upload multiple medical reports |
+| 🧠 AI Report Explanation | Easy-to-understand medical insights |
+| 🔍 Hybrid Search | Dense + Sparse Retrieval |
+| 💬 Conversational Chat | Ask questions naturally |
+| 🧾 Chroma Vector DB | Semantic document storage |
+| ⚡ Fast LLM Responses | Powered by Groq |
+| 🧠 Chat Memory | Session-based conversations |
+| 📊 Semantic Retrieval | Context-aware responses |
+| 🎨 Professional UI | Streamlit + Custom CSS |
+
+</div>
 
 ---
 
 # 🏗️ System Architecture
 
 ```text
-PDF Upload
-    ↓
-Text Extraction
-    ↓
-Chunking
-    ↓
-Embeddings Generation
-    ↓
-Chroma Vector Store
-    ↓
-Hybrid Retrieval
-(Dense + Sparse)
-    ↓
-Groq LLM
-    ↓
-AI Response
+              ┌────────────────────┐
+              │   PDF Uploads      │
+              └─────────┬──────────┘
+                        │
+                        ▼
+              ┌────────────────────┐
+              │ Text Extraction    │
+              └─────────┬──────────┘
+                        │
+                        ▼
+              ┌────────────────────┐
+              │ Chunking           │
+              └─────────┬──────────┘
+                        │
+                        ▼
+              ┌────────────────────┐
+              │ Embeddings         │
+              └─────────┬──────────┘
+                        │
+                        ▼
+              ┌────────────────────┐
+              │ Chroma Vector DB   │
+              └─────────┬──────────┘
+                        │
+        ┌───────────────┴───────────────┐
+        ▼                               ▼
+┌───────────────┐              ┌────────────────┐
+│ Dense Search  │              │ BM25 Retrieval │
+└───────┬───────┘              └───────┬────────┘
+        └───────────────┬──────────────┘
+                        ▼
+              ┌────────────────────┐
+              │ Hybrid Retriever   │
+              └─────────┬──────────┘
+                        │
+                        ▼
+              ┌────────────────────┐
+              │ Groq LLM           │
+              └─────────┬──────────┘
+                        ▼
+              ┌────────────────────┐
+              │ AI Response        │
+              └────────────────────┘
 ```
+
+---
+
+# 🧠 Tech Stack
+
+<div align="center">
+
+| Technology | Usage |
+|---|---|
+| 🐍 Python | Core Programming |
+| 🎨 Streamlit | Frontend UI |
+| 🔗 LangChain | RAG Pipeline |
+| ⚡ Groq | LLM Inference |
+| 🧾 ChromaDB | Vector Storage |
+| 🤗 HuggingFace | Embeddings |
+| 🔍 BM25 | Sparse Retrieval |
+| 📄 PyPDFLoader | PDF Parsing |
+
+</div>
 
 ---
 
@@ -66,24 +139,31 @@ MedRAG-AI/
 ├── medical_repo.py
 ├── requirements.txt
 ├── README.md
+├── .gitignore
+│
+├── assets/
+│   ├── screenshot1.png
+│   └── screenshot2.png
+│
+└── sample_pdfs/
 ```
 
 ---
 
-# ⚙️ Installation
+# ⚙️ Installation Guide
 
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/Medical-Report-AI.git
+git clone https://github.com/your-username/MedRAG-AI.git
 ```
 
 ---
 
-## 2️⃣ Move Into Folder
+## 2️⃣ Navigate to Folder
 
 ```bash
-cd Medical-Report-AI
+cd MedRAG-AI
 ```
 
 ---
@@ -99,69 +179,121 @@ pip install -r requirements.txt
 ## 4️⃣ Run Streamlit App
 
 ```bash
-streamlit run app.py
+streamlit run medical_repo.py
 ```
 
 ---
 
-# 🔑 Setup API Key
+# 🔑 Setup Groq API Key
 
-Get your Groq API Key from:
+Get your API key from:
 
-https://console.groq.com/keys
+## 🌐 https://console.groq.com/keys
 
-Paste it inside the sidebar.
+Paste the API key inside the Streamlit sidebar.
+
+---
+
+# 💡 Example Questions
+
+```text
+• Summarize this medical report
+• Explain abnormal findings
+• What lifestyle changes should I follow?
+• Explain blood test results
+• Is there anything serious?
+• What precautions should I take?
+```
 
 ---
 
 # 📸 Screenshots
 
-Add screenshots inside:
-
-```bash
-assets/
-```
-
-Example:
+## 🖥️ Main Dashboard
 
 ```markdown
-![App Screenshot](assets/screenshot.png)
+![Dashboard](assets/screenshot1.png)
 ```
 
 ---
 
-# 📌 Example Questions
+## 💬 AI Chat Interface
 
-- Summarize this report
-- Explain abnormal findings
-- What precautions should I take?
-- Explain blood pressure results
-- Is there anything serious?
+```markdown
+![Chat UI](assets/screenshot2.png)
+```
 
 ---
 
-# 🧪 Future Improvements
+# 🚀 Future Improvements
 
-- OCR Support for Scanned PDFs
-- Voice Assistant
-- Report Classification
-- Download AI Summary PDF
-- Multi-LLM Support
-- Dark/Light Theme
-- Medical Charts Visualization
+- ✅ OCR Support for Scanned PDFs
+- ✅ Voice Assistant
+- ✅ Download AI Summary PDF
+- ✅ Medical Report Classification
+- ✅ Multi-LLM Support
+- ✅ Dark / Light Mode
+- ✅ AI Health Recommendations
+- ✅ Medical Charts Visualization
+- ✅ Report History Storage
 
 ---
 
-# ⚠️ Disclaimer
+# ⚠️ Current Limitations
 
-This project is for educational purposes only.
+```diff
+- Only text-based PDFs are supported
+- Scanned/image PDFs are not supported yet
+- OCR pipeline will be added in future versions
+```
 
-Always consult a qualified doctor for medical advice.
+---
+
+# 🧪 Requirements
+
+```txt
+streamlit
+langchain
+langchain-community
+langchain-core
+langchain-groq
+langchain-huggingface
+langchain-text-splitters
+langchain-classic
+chromadb
+sentence-transformers
+pypdf
+rank-bm25
+torch
+```
+
+---
+
+# 🛡️ Disclaimer
+
+> This project is developed for educational and research purposes only.
+
+⚠️ Always consult a certified medical professional for actual diagnosis and treatment.
 
 ---
 
 # 👩‍💻 Author
 
-Anushka Singh
+<div align="center">
 
-Built with ❤️ using AI & Python
+## Anushka Singh
+
+💡 AI & Data Science Enthusiast  
+🚀 Building AI-Powered Applications with Python & LangChain
+
+</div>
+
+---
+
+<div align="center">
+
+# ⭐ If you like this project, give it a star on GitHub!
+
+Made with ❤️ using Python + AI
+
+</div>
