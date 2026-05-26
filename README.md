@@ -139,13 +139,7 @@ MedRAG-AI/
 ├── medical_repo.py
 ├── requirements.txt
 ├── README.md
-├── .gitignore
-│
-├── assets/
-│   ├── screenshot1.png
-│   └── screenshot2.png
-│
-└── sample_pdfs/
+
 ```
 
 ---
