@@ -1,30 +1,4 @@
-st.set_page_confit(page_title="Medical Report AI",layout="wide")
-st.markdown("""
-<style>
-
-.main {
-    background-color: #0E1117;
-    color: white;
-}
-
-.stTextInput > div > div > input {
-    border-radius: 10px;
-}
-
-.stButton button {
-    width: 100%;
-    border-radius: 10px;
-    height: 45px;
-    font-size: 16px;
-}
-
-[data-testid="stSidebar"] {
-    background-color: #111827;
-}
-
-</style>
-""", unsafe_allow_html=True)
-st.title("🩺 Medical Report AI")
+#🩺 Medical Report AI
 
 An AI-powered Medical Report Analyzer built using **Streamlit + LangChain + Groq + ChromaDB**.
 
