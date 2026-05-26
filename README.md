@@ -63,12 +63,10 @@ AI Response
 ```bash
 Medical-Report-AI/
 │
-├── app.py
+├── medical_repo.py
 ├── requirements.txt
 ├── README.md
-├── assets/
-│   └── screenshot.png
-└── .gitignore
+
 ```
 
 ---
