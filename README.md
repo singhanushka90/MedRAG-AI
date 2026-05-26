@@ -1,3 +1,4 @@
+st.set_page_confit(page_title="Medical Report AI",layout="wide")
 st.markdown("""
 <style>
 
@@ -23,7 +24,7 @@ st.markdown("""
 
 </style>
 """, unsafe_allow_html=True)
-# 🩺 Medical Report AI
+st.title("🩺 Medical Report AI")
 
 An AI-powered Medical Report Analyzer built using **Streamlit + LangChain + Groq + ChromaDB**.
 
