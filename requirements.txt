@@ -1,0 +1,12 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-classic
+langchain-groq
+langchain-huggingface
+chromadb
+sentence-transformers
+pypdf
+pymupdf
+rank-bm25
