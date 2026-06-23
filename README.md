@@ -149,7 +149,7 @@ MedRAG-AI/
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/MedRAG-AI.git
+git clone https://github.com/singhanushka90/MedRAG-AI.git
 ```
 
 ---
