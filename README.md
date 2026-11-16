@@ -1,292 +1,289 @@
-<div align="center">
+🩺 MediChat AI – Medical Report Analysis & RAG Chatbot
 
-# 🩺 MedRAG-AI
+MediChat AI is an AI-powered medical report analysis chatbot that helps users understand their laboratory reports through document-based question answering and automated summaries.
 
-### <span style="color:#4CAF50;">AI-Powered Medical Report Analysis using Hybrid RAG</span>
+The application uses Retrieval-Augmented Generation (RAG) with hybrid retrieval to extract relevant information from uploaded medical PDFs and generate context-aware responses using an LLM.
 
-<p align="center">
-
-<img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python"/>
-
-<img src="https://img.shields.io/badge/Streamlit-AI_App-red?style=for-the-badge&logo=streamlit"/>
-
-<img src="https://img.shields.io/badge/LangChain-RAG-green?style=for-the-badge"/>
-
-<img src="https://img.shields.io/badge/ChromaDB-VectorDB-purple?style=for-the-badge"/>
-
-<img src="https://img.shields.io/badge/Groq-LLM-orange?style=for-the-badge"/>
-
-</p>
+It combines dense vector search and sparse keyword search to improve document retrieval and helps users explore important values, reference ranges, and findings from their reports.
 
 ---
 
-### 🚀 Upload Medical PDFs • Ask Questions • Get AI Explanations
+✨ Key Features
 
-</div>
-
----
-
-# 📌 Overview
-
-**MedRAG-AI** is an advanced AI-powered Medical Report Assistant built using:
-
-- 🧠 LangChain
-- ⚡ Groq LLM
-- 📚 ChromaDB
-- 🔍 Hybrid Retrieval
-- 🎨 Streamlit UI
-
-This application allows users to upload medical reports in PDF format and interact with them using natural language.
-
-The system uses **Hybrid RAG (Retrieval-Augmented Generation)** to provide intelligent and context-aware responses from uploaded reports.
+- Medical PDF Upload: Upload medical laboratory reports in PDF format.
+- Text Extraction: Extract text from uploaded PDF documents.
+- Text Chunking: Split extracted text into smaller chunks for efficient retrieval.
+- Semantic Embeddings: Convert document chunks into vector embeddings.
+- Dense Retrieval: Retrieve semantically relevant document chunks using ChromaDB.
+- Sparse Retrieval: Use BM25 for keyword-based document search.
+- Hybrid Retrieval: Combine dense and sparse retrieval using EnsembleRetriever.
+- AI-Powered Responses: Generate context-aware answers using Groq LLM.
+- Medical Report Summary: Generate summaries of important laboratory findings.
+- Chat History: Maintain conversation history during the application session.
+- Retrieved Context: Display retrieved document chunks for transparency.
+- Evaluation Data Collection: Store user queries, generated answers, and retrieved context for future evaluation with DeepEval.
 
 ---
 
-# ✨ Features
+🏗️ System Architecture
 
-<div align="center">
-
-| Feature | Description |
-|---|---|
-| 📄 Multi PDF Upload | Upload multiple medical reports |
-| 🧠 AI Report Explanation | Easy-to-understand medical insights |
-| 🔍 Hybrid Search | Dense + Sparse Retrieval |
-| 💬 Conversational Chat | Ask questions naturally |
-| 🧾 Chroma Vector DB | Semantic document storage |
-| ⚡ Fast LLM Responses | Powered by Groq |
-| 🧠 Chat Memory | Session-based conversations |
-| 📊 Semantic Retrieval | Context-aware responses |
-| 🎨 Professional UI | Streamlit + Custom CSS |
-
-</div>
-
----
-
-# 🏗️ System Architecture
-
-```text
-              ┌────────────────────┐
-              │   PDF Uploads      │
-              └─────────┬──────────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │ Text Extraction    │
-              └─────────┬──────────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │ Chunking           │
-              └─────────┬──────────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │ Embeddings         │
-              └─────────┬──────────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │ Chroma Vector DB   │
-              └─────────┬──────────┘
-                        │
-        ┌───────────────┴───────────────┐
-        ▼                               ▼
-┌───────────────┐              ┌────────────────┐
-│ Dense Search  │              │ BM25 Retrieval │
-└───────┬───────┘              └───────┬────────┘
-        └───────────────┬──────────────┘
-                        ▼
-              ┌────────────────────┐
-              │ Hybrid Retriever   │
-              └─────────┬──────────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │ Groq LLM           │
-              └─────────┬──────────┘
-                        ▼
-              ┌────────────────────┐
-              │ AI Response        │
-              └────────────────────┘
-```
+          User
+           |
+           v
+     Upload Medical PDF
+           |
+           v
+      Text Extraction
+           |
+           v
+       Text Chunking
+           |
+           v
+      Generate Embeddings
+           |
+           v
+        ChromaDB
+           |
+           |
+    +------+------+
+    |             |
+    v             v
+ Dense Search   BM25 Search
+    |             |
+    +------+------+
+           |
+           v
+    Hybrid Retrieval
+    (EnsembleRetriever)
+           |
+           v
+   Retrieved Context
+           |
+           v
+    Groq LLM + Prompt
+           |
+           v
+   Generated Response
+           |
+           v
+     MediChat AI UI
+           |
+           v
+   Evaluation Data
+           |
+           v
+    Future DeepEval
 
 ---
 
-# 🧠 Tech Stack
+🛠️ Tech Stack
 
-<div align="center">
+Technology| Purpose
+Python| Core programming language
+Streamlit| User interface
+LangChain| RAG pipeline and chain orchestration
+Groq| LLM inference
+ChatGroq| Integration with Groq LLM
+Hugging Face| Text embedding generation
+Sentence Transformers| Semantic embeddings
+ChromaDB| Vector database
+BM25| Keyword-based retrieval
+EnsembleRetriever| Hybrid retrieval
+PyPDFLoader| PDF text extraction
+DeepEval| Planned LLM application evaluation
 
-| Technology | Usage |
-|---|---|
-| 🐍 Python | Core Programming |
-| 🎨 Streamlit | Frontend UI |
-| 🔗 LangChain | RAG Pipeline |
-| ⚡ Groq | LLM Inference |
-| 🧾 ChromaDB | Vector Storage |
-| 🤗 HuggingFace | Embeddings |
-| 🔍 BM25 | Sparse Retrieval |
-| 📄 PyPDFLoader | PDF Parsing |
+Models Used
 
-</div>
+LLM: "openai/gpt-oss-120b"
 
----
-
-# 📂 Project Structure
-
-```bash
-MedRAG-AI/
-│
-├── medical_repo.py
-├── requirements.txt
-├── README.md
-
-```
+Embedding Model: "sentence-transformers/all-MiniLM-L6-v2"
 
 ---
 
-# ⚙️ Installation Guide
+🔍 Retrieval Strategy
 
-## 1️⃣ Clone Repository
+MediChat AI uses a hybrid retrieval approach to retrieve relevant information from medical documents.
 
-```bash
-git clone https://github.com/singhanushka90/MedRAG-AI.git
-```
+1. Dense Retrieval
+
+- Converts document chunks into vector embeddings.
+- Stores embeddings in ChromaDB.
+- Retrieves information based on semantic similarity.
+- Helps find relevant information even when the user's wording differs from the report.
+
+2. Sparse Retrieval
+
+- Uses BM25 for keyword-based retrieval.
+- Matches important words and medical terms.
+- Helps retrieve exact values, test names, and laboratory terminology.
+
+3. Hybrid Retrieval
+
+Combines both retrieval methods using EnsembleRetriever.
+
+Configuration:
+
+- Dense Retriever: ChromaDB
+- Sparse Retriever: BM25
+- Dense Weight: 0.6
+- Sparse Weight: 0.4
+- Top-K: 4 for each retriever
+
+The goal is to combine semantic understanding with keyword matching for better document retrieval.
 
 ---
 
-## 2️⃣ Navigate to Folder
+📊 LLM Evaluation – DeepEval
 
-```bash
-cd MedRAG-AI
-```
+MediChat AI includes an evaluation data collection workflow to assess the retrieval and generation stages of its RAG pipeline.
+
+The application stores:
+
+- User input
+- Actual generated output
+- Retrieved context
+- Source document information
+
+Planned Evaluation Metrics
+
+Metric| What It Evaluates
+Contextual Precision| Whether relevant retrieved chunks are ranked higher
+Contextual Recall| Whether the retrieved context contains the required information
+Faithfulness| Whether the generated answer is supported by retrieved context
+Answer Relevancy| Whether the answer addresses the user's question
+
+Current Evaluation Progress
+
+- RAG interaction data collection implemented.
+- Generated answers and retrieved contexts captured.
+- Evaluation dataset can be exported as JSONL.
+- Two test interactions collected during initial testing.
+- Actual DeepEval metric execution is the next implementation step.
 
 ---
 
-## 3️⃣ Install Dependencies
+🧪 Initial Testing & Observations
 
-```bash
+The application was tested using a laboratory report containing CBC, lipid profile, vitamin assays, and other biochemical parameters.
+
+Test 1: General Report Summary
+
+Observation:
+
+- Generated a summary of laboratory findings.
+- Identified several values outside the stated reference ranges.
+- Displayed retrieved document chunks.
+- Included a medical consultation disclaimer.
+
+Test 2: Abnormal Values Identification
+
+Observation:
+
+- Identified low platelet count.
+- Identified elevated hematocrit.
+- Identified abnormal platelet indices.
+- Identified low Vitamin B12.
+- Identified insufficient Vitamin D.
+- Identified slightly elevated uric acid.
+
+Improvement Areas Identified:
+
+- Some abnormal values, including RBC count and basophils, were missed.
+- Some retrieved chunks were less relevant than others.
+- Relevant chunks were not always ranked at the top.
+- Medical interpretations need stronger grounding in the source report.
+
+These observations will be used to improve retrieval quality and answer generation.
+
+---
+
+🚀 Installation & Setup
+
+1. Clone the Repository
+
+git clone <your-repository-url>
+cd MediChat-AI
+
+2. Create a Virtual Environment
+
+python -m venv venv
+
+Activate it:
+
+Windows:
+
+venv\Scripts\activate
+
+Linux / macOS:
+
+source venv/bin/activate
+
+3. Install Dependencies
+
 pip install -r requirements.txt
-```
 
----
-
-## 4️⃣ Run Streamlit App
-
-```bash
-streamlit run medical_repo.py
-```
-
----
-
-# 🔑 Setup Groq API Key
+4. Configure Groq API Key
 
 Get your API key from:
 
-## 🌐 https://console.groq.com/keys
+https://console.groq.com/
 
-Paste the API key inside the Streamlit sidebar.
+Enter the API key in the application's Configuration sidebar.
 
----
+5. Run the Application
 
-# 💡 Example Questions
+streamlit run app.py
 
-```text
-• Summarize this medical report
-• Explain abnormal findings
-• What lifestyle changes should I follow?
-• Explain blood test results
-• Is there anything serious?
-• What precautions should I take?
-```
+The application will open in your browser.
 
 ---
 
-# 📸 Screenshots
+📁 Project Structure
 
-## 🖥️ Main Dashboard
+MediChat-AI/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+└── evaluation/
+    └── evaluation_data.jsonl
 
-```markdown
-![Dashboard](assets/screenshot1.png)
-```
-
----
-
-## 💬 AI Chat Interface
-
-```markdown
-![Chat UI](assets/screenshot2.png)
-```
+The structure above represents the main application and evaluation artifacts; update it if your repository contains additional modules.
 
 ---
 
-# 🚀 Future Improvements
+🔮 Future Improvements
 
-- ✅ OCR Support for Scanned PDFs
-- ✅ Voice Assistant
-- ✅ Download AI Summary PDF
-- ✅ Medical Report Classification
-- ✅ Multi-LLM Support
-- ✅ AI Health Recommendations
-- ✅ Medical Charts Visualization
-- ✅ Report History Storage
-
----
-
-# ⚠️ Current Limitations
-
-```diff
-- Only text-based PDFs are supported
-- Scanned/image PDFs are not supported yet
-- OCR pipeline will be added in future versions
-```
+- Implement DeepEval metrics for automated RAG evaluation.
+- Build a verified golden dataset with expected answers.
+- Improve contextual precision and retrieval ranking.
+- Reduce irrelevant and duplicate retrieved chunks.
+- Improve answer faithfulness and reduce hallucinations.
+- Add OCR support for scanned medical PDFs.
+- Improve document metadata and source tracking.
+- Add more comprehensive evaluation test cases.
 
 ---
 
-# 🧪 Requirements
+⚠️ Disclaimer
 
-```txt
-streamlit
-langchain
-langchain-community
-langchain-core
-langchain-groq
-langchain-huggingface
-langchain-text-splitters
-langchain-classic
-chromadb
-sentence-transformers
-pypdf
-rank-bm25
-torch
-```
+MediChat AI is an educational AI project designed to help users understand information contained in medical laboratory reports.
+
+It does not provide medical diagnoses or replace professional medical advice. Generated responses may contain errors or omissions. Always consult a qualified healthcare professional for clinical interpretation and treatment decisions.
+
+Medical documents may contain sensitive personal information. Use appropriate privacy safeguards and avoid uploading identifiable medical information to external services without suitable consent and protections.
 
 ---
 
-# 🛡️ Disclaimer
+👩‍💻 Author
 
-> This project is developed for educational and research purposes only.
+Anushka Singh
 
-⚠️ Always consult a certified medical professional for actual diagnosis and treatment.
+AI & Data Science Student
 
----
-
-# 👩‍💻 Author
-
-<div align="center">
-
-## Anushka Singh
-
-💡 AI & Data Science Enthusiast  
-🚀 Building AI-Powered Applications with Python & LangChain
-
-</div>
+GitHub: "singhanushka90" (https://github.com/singhanushka90)
 
 ---
 
-<div align="center">
-
-# ⭐ If you like this project, give it a star on GitHub!
-
-Made with ❤️ using Python + AI
-
-</div>
+⭐ If you find this project interesting, consider giving it a star!
