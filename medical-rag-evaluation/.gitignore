@@ -69,3 +69,4 @@ htmlcov/
 # Jupyter Notebook
 # =========================
 .ipynb_checkpoints/
+datasets/golden-dataset.json
