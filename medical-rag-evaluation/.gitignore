@@ -1,59 +1,71 @@
-# Virtual Environment
+# =========================
+# Python Environment
+# =========================
 venv/
 .venv/
 env/
+ENV/
 
-# Environment Variables and Secrets
-.env
-.env.*
-!.env.example
-
+# =========================
 # Python Cache
+# =========================
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Jupyter Notebook
-.ipynb_checkpoints/
+# =========================
+# Environment Variables / Secrets
+# =========================
+.env
+.env.*
+!.env.example
 
+# =========================
+# ChromaDB Vector Database
+# =========================
+chroma_db/
+chroma_db_*/
+
+# =========================
+# Private / Raw Medical PDFs
+# =========================
+data/raw/medical_pdfs/*
+!data/raw/medical_pdfs/.gitkeep
+
+# =========================
+# Generated / Processed Data
+# =========================
+data/processed/
+*.pkl
+*.pickle
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
 # IDE Settings
+# =========================
 .vscode/
 .idea/
 
+# =========================
 # OS Files
+# =========================
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Medical PDF Documents (Private Data)
-data/raw/medical_pdfs/
-*.pdf
-
-# Extracted Data
-data/processed/
-data/interim/
-
-# Logs
-*.log
-logs/
-
-# Test Cache
+# =========================
+# Testing / Coverage
+# =========================
 .pytest_cache/
 .coverage
 htmlcov/
 
-# Build Files
-build/
-dist/
-*.egg-info/
-
-# Model Files
-*.pkl
-*.joblib
-*.h5
-*.pt
-*.pth
-*.onnx
-
-# Temporary Files
-*.tmp
-*.temp
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
