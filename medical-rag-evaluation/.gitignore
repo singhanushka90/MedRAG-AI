@@ -1,0 +1,59 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Environment Variables and Secrets
+.env
+.env.*
+!.env.example
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE Settings
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Medical PDF Documents (Private Data)
+data/raw/medical_pdfs/
+*.pdf
+
+# Extracted Data
+data/processed/
+data/interim/
+
+# Logs
+*.log
+logs/
+
+# Test Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build Files
+build/
+dist/
+*.egg-info/
+
+# Model Files
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+*.onnx
+
+# Temporary Files
+*.tmp
+*.temp
