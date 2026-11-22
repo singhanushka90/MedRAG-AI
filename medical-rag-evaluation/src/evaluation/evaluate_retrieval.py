@@ -20,14 +20,14 @@ def evaluate_retrieval():
     recall_metric = ContextualRecallMetric(
         model=judge,
         threshold=None,
-        include_reason=True,
+        include_reason=False,
         async_mode=False
     )
 
     precision_metric = ContextualPrecisionMetric(
         model=judge,
         threshold=None,
-        include_reason=True,
+        include_reason=False,
         async_mode=False
     )
 
