@@ -21,7 +21,6 @@ def create_vector_store(chunks):
 
     return vector_store
 
-
 def load_vector_store():
 
     embeddings = load_embedding_model()

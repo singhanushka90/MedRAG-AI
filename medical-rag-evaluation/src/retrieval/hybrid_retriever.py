@@ -12,8 +12,8 @@ def reciprocal_rank_fusion(
     sparse_results,
     k=RRF_K
 ):
-    scores = {}
-    documents = {}
+    scores = {} #RRF SCORE
+    documents = {} #ACTUAL CONTENT AND METADATA
 
     result_lists = [
         dense_results,
