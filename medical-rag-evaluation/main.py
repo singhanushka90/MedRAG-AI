@@ -1,17 +1,19 @@
-from src.evaluation.groq_judge import GroqJudge
+from src.retrieval.hybrid_retriever import retrieve_hybrid_documents
+from src.reranking.reranker import rerank_documents
 
 
-def main():
+query = "What is the RBC count?"
 
-    judge = GroqJudge()
+documents = retrieve_hybrid_documents(query, top_k=3)
 
-    response = judge.generate(
-        "Reply with exactly: Groq judge connection successful."
-    )
+reranked_documents = rerank_documents(
+    query,
+    documents,
+    top_k=3
+)
 
-    print("Judge Model:", judge.get_model_name())
-    print("Response:", response)
+for index, document in enumerate(reranked_documents, start=1):
 
-
-if __name__ == "__main__":
-    main()
+    print(f"\nRank {index}")
+    print("Score:", document["reranker_score"])
+    print("Content:", document["content"])
