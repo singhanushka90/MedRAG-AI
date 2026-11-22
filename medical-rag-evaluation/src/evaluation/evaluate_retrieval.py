@@ -8,6 +8,7 @@ from deepeval.test_case import LLMTestCase
 from src.evaluation.dataset import load_golden_dataset
 from src.evaluation.groq_judge import GroqJudge
 from src.retrieval.hybrid_retriever import retrieve_hybrid_documents
+from src.reranking.reranker import rerank_documents
 
 
 def evaluate_retrieval():
@@ -45,6 +46,7 @@ def evaluate_retrieval():
             query,
             top_k=3
         )
+        retrieved_documents=rerank_documents(query,retrieved_documents,top_k=3)
 
         retrieval_context = [
             document["content"]
