@@ -1,18 +1,16 @@
-from src.retrieval.hybrid_retriever import retrieve_hybrid_documents
+from src.evaluation.groq_judge import GroqJudge
 
 
 def main():
 
-    query = "What is the haemoglobin level?"
+    judge = GroqJudge()
 
-    results = retrieve_hybrid_documents(query, top_k=3)
+    response = judge.generate(
+        "Reply with exactly: Groq judge connection successful."
+    )
 
-    for i, result in enumerate(results, start=1):
-
-        print(f"\nResult {i}")
-        print("Content:", result["content"])
-        print("RRF Score:", result["rrf_score"])
-        print("Metadata:", result["metadata"])
+    print("Judge Model:", judge.get_model_name())
+    print("Response:", response)
 
 
 if __name__ == "__main__":
