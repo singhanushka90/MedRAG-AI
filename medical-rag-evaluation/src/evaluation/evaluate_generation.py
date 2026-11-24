@@ -5,12 +5,15 @@ from src.retrieval.hybrid_retriever import retrieve_hybrid_documents
 from src.reranking.reranker import rerank_documents
 from src.generation.llm_generator import generate_answer
 from src.evaluation.groq_judge import GroqJudge
-from src.evaluation.dataset import load_golden_dataset
+from src.evaluation.dataset import 
+from deepeval.metric import AnswerRelevancyMetric 
+
 
 faithfulness_metric = FaithfulnessMetric(
     model=GroqJudge(),
     include_reason=False
 )
+answer_relevancy=AnswerRelevancyMetric(model=GroqJudge(),include_reason=False)
 dataset = load_golden_dataset()
 
 faithfulness_scores = []
