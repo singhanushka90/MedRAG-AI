@@ -57,9 +57,14 @@ for item in dataset:
     score = faithfulness_metric.score
     faithfulness_scores.append(score)
 
+    answer_relevancy.measure(test_case)
+    relevancy_score=answer_relevancy.score
+   
+
     print("\nQuestion:", query)
     print("Answer:", answer)
     print("Faithfulness:", score)
+    print("Answer Relevancy:",relevancy_score)
 
 
 average_score = sum(faithfulness_scores) / len(faithfulness_scores)
