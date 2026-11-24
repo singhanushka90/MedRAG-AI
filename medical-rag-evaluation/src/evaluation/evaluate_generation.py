@@ -5,8 +5,8 @@ from src.retrieval.hybrid_retriever import retrieve_hybrid_documents
 from src.reranking.reranker import rerank_documents
 from src.generation.llm_generator import generate_answer
 from src.evaluation.groq_judge import GroqJudge
-from src.evaluation.dataset import 
-from deepeval.metric import AnswerRelevancyMetric 
+from src.evaluation.dataset import load_golden_dataset
+from deepeval.metrics import AnswerRelevancyMetric 
 
 
 faithfulness_metric = FaithfulnessMetric(
