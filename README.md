@@ -1,4 +1,4 @@
-🩺 MediChat AI – Medical Report Analysis & RAG Chatbot
+🩺 MediChat AI – Medical Report Analysis & RAG Chat
 
 MediChat AI is an AI-powered medical report analysis chatbot that helps users understand their laboratory reports through document-based question answering and automated summaries.
 
